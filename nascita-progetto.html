@@ -4,11 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>La nascita del progetto | AgroTritura</title>
+  <meta name="description" content="La nascita del progetto AgroTritura: perché ho scelto il mangime tritato su misura." />
   <link rel="icon" href="favicon.jpg" />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    .np-section { padding: 60px 0; }
-    .np-narrow { max-width: 950px; }
+    /* SOLO per questa pagina: coerente con la home, ma più “pulita” */
+    .np-section { padding: 56px 0; }
+    .np-narrow { max-width: 980px; }
     .np-card {
       border-radius: 22px;
       background: #fff;
@@ -16,6 +18,7 @@
       border: 1px solid rgba(0,0,0,.06);
     }
     .np-pad { padding: 26px; }
+    .np-lead { font-size: 1.06rem; opacity: .92; }
     .np-grid {
       display:grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -34,6 +37,18 @@
     .np-tile h3 { margin:0 0 8px; }
     .np-tile p { margin:0; opacity:.85; }
 
+    /* Video protagonista */
+    .np-video-wrap {
+      border-radius: 22px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 26px 70px rgba(0,0,0,.18);
+    }
+    .np-video-wrap video { width: 100%; display:block; }
+    .np-video-title { margin: 0 0 12px 0; }
+    .np-cta-row { display:flex; gap:12px; flex-wrap:wrap; margin-top: 16px; }
+
+    /* Bottone verde più evidente */
     .np-home-btn {
       background: #2e5d2e !important;
       color: #fff !important;
@@ -42,25 +57,67 @@
       padding: 14px 22px !important;
       font-weight: 700;
     }
-    .np-home-btn:hover {
-      background: #254b25 !important;
-    }
+    .np-home-btn:hover { background: #254b25 !important; }
+
+    .np-footnote { text-align:center; opacity:.6; margin-top: 28px; }
   </style>
 </head>
 
 <body>
 
 <header class="topbar">
-  <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+  <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
     <a href="index.html" class="brand">AgroTritura</a>
-    <a href="index.html" class="btn ghost">← Home</a>
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <a href="index.html" class="btn ghost">← Home</a>
+      <a href="index.html#preventivo" class="btn primary">Preventivo</a>
+    </div>
   </div>
 </header>
 
 <section class="np-section">
   <div class="container np-narrow">
 
-    <div class="np-card">
+    <!-- VIDEO PROTAGONISTA (scelta 2) -->
+    <h1 class="np-video-title">La nascita del progetto</h1>
+    <p class="np-lead" style="margin-top:0;">
+      Ti spiego in modo diretto perché ho scelto il <strong>mangime tritato su misura</strong> e come lavoro ogni ordine.
+    </p>
+
+    <div class="np-video-wrap" style="margin-top:16px;">
+      <video controls playsinline preload="metadata">
+        <source src="media/nascita-agrotritura.mp4" type="video/mp4">
+        Il tuo browser non supporta il video.
+      </video>
+    </div>
+
+    <div class="np-cta-row">
+      <a class="btn" href="tel:+393341067510">📞 Chiama</a>
+      <a class="btn" href="https://wa.me/393341067510">💬 WhatsApp</a>
+      <a class="btn primary" href="index.html#preventivo">📝 Richiedi preventivo</a>
+    </div>
+
+    <!-- STORY -->
+    <div class="np-card" style="margin-top:26px;">
+      <div class="np-pad">
+        <h2 style="margin-top:0;">Perché ho creato AgroTritura</h2>
+        <p class="np-lead">
+          AgroTritura nasce nel mio allevamento. Per anni ho usato mangime a granaglie, come fanno in tanti.
+          Poi una delle mie galline ha avuto un problema di <strong>gozzo ostruito</strong>.
+        </p>
+        <p>
+          Non è stato un episodio grave, ma mi ha fatto fermare e riflettere. Ho iniziato a informarmi meglio su digestione e granulometria,
+          e da lì ho deciso di passare al tritato con dimensione controllata.
+        </p>
+        <p style="margin-bottom:0;">
+          Ho visto un’alimentazione più regolare, meno sprechi e una gestione più semplice. Oggi preparo mangime tritato su richiesta,
+          in piccoli lotti, con attenzione alla freschezza.
+        </p>
+      </div>
+    </div>
+
+    <!-- COSA CAMBIA -->
+    <div class="np-card" style="margin-top:18px;">
       <div class="np-pad">
         <h2 style="margin-top:0;">Cosa cambia con il tritato</h2>
 
@@ -85,26 +142,30 @@
             <p>Miscela in base alle esigenze.</p>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="np-card" style="margin-top:28px; background:#eef3ee;">
-      <div class="np-pad">
-        <h3 style="margin-top:0;">Opero in Provincia di Novara.</h3>
-        <p style="opacity:.85;">
-          Per zone più lontane: valutiamo insieme se è fattibile.
-        </p>
-
-        <div style="margin-top:20px;">
-          <a href="index.html" class="btn np-home-btn">← Torna alla Home</a>
+        <div class="np-cta-row">
+          <a class="btn" href="index.html#granulometria">🔎 Scopri la granulometria</a>
+          <a class="btn primary" href="index.html#preventivo">Richiedi un preventivo</a>
         </div>
       </div>
     </div>
 
-    <p style="text-align:center; opacity:.6; margin-top:30px;">
-      Ultimo aggiornamento: 02/2026
-    </p>
+    <!-- DOVE OPERO -->
+    <div class="np-card" style="margin-top:18px; background:#eef3ee;">
+      <div class="np-pad">
+        <h3 style="margin-top:0;">Dove opero</h3>
+        <p style="opacity:.88;">
+          Opero principalmente in <strong>Provincia di Novara</strong>. Per zone più lontane possiamo organizzarci e valutare insieme se è fattibile.
+        </p>
 
+        <div class="np-cta-row" style="align-items:center;">
+          <a href="index.html" class="btn np-home-btn">← Torna alla Home</a>
+          <a href="https://wa.me/393341067510" class="btn">💬 Parliamone su WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="np-footnote">Ultimo aggiornamento: 02/2026</p>
   </div>
 </section>
 
