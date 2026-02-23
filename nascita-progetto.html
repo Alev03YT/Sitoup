@@ -60,6 +60,94 @@
     .np-home-btn:hover { background: #254b25 !important; }
 
     .np-footnote { text-align:center; opacity:.6; margin-top: 28px; }
+  
+    /* Story card più “premium” */
+    .np-story{
+      position: relative;
+      overflow:hidden;
+      background: linear-gradient(180deg, rgba(46,93,46,.06), rgba(255,255,255,1) 55%);
+    }
+    .np-story:before{
+      content:"";
+      position:absolute;
+      right:-120px; top:-140px;
+      width: 360px; height: 360px;
+      background: radial-gradient(circle, rgba(46,93,46,.12), transparent 65%);
+      pointer-events:none;
+    }
+    .np-story-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom: 10px;
+    }
+    .np-chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(46,93,46,.10);
+      border: 1px solid rgba(46,93,46,.16);
+      font-weight: 700;
+      opacity:.95;
+    }
+    .np-divider{
+      height:1px;
+      background: rgba(0,0,0,.08);
+      margin: 14px 0 10px 0;
+    }
+
+    /* Slider stile pagina principale (frecce + pallini) */
+    .np-carousel{
+      position:relative;
+      margin-top: 16px;
+    }
+    .np-car-viewport{
+      overflow:hidden;
+      border-radius: 18px;
+    }
+    .np-car-track{
+      display:flex;
+      transition: transform .28s ease;
+      will-change: transform;
+    }
+    .np-slide{
+      flex: 0 0 100%;
+    }
+    .np-car-actions{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .np-dots{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      justify-content:center;
+      flex: 1;
+    }
+    .np-dot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      border:0;
+      background: rgba(0,0,0,.18);
+    }
+    .np-dot.is-active{
+      background: rgba(46,93,46,.85);
+      width:22px;
+    }
+    .np-navbtn{
+      min-width: 44px;
+      padding: 10px 12px !important;
+      border-radius: 999px !important;
+      font-weight: 800;
+    }
+
   </style>
 </head>
 
@@ -98,9 +186,9 @@
     </div>
 
     <!-- STORY -->
-    <div class="np-card" style="margin-top:26px;">
+    <div class="np-card np-story" style="margin-top:26px;">
       <div class="np-pad">
-        <h2 style="margin-top:0;">Perché ho creato AgroTritura</h2>
+        <div class="np-story-head"><h2 style="margin-top:0; margin-bottom:0;">Perché ho creato AgroTritura</h2><span class="np-chip">🌾 Storia reale</span></div><div class="np-divider"></div>
         <p class="np-lead">
           AgroTritura nasce nel mio allevamento. Per anni ho usato mangime a granaglie, come fanno in tanti.
           Poi una delle mie galline ha avuto un problema di <strong>gozzo ostruito</strong>.
@@ -121,11 +209,52 @@
       <div class="np-pad">
         <h2 style="margin-top:0;">Cosa cambia con il tritato</h2>
 
-        <div class="np-grid" style="margin-top:18px;">
-          <div class="np-tile">
-            <h3>Granulometria controllata</h3>
-            <p>Fine, media o grossa in base all’animale.</p>
-          </div>
+        
+<div class="np-carousel" aria-roledescription="carousel" aria-label="Cosa cambia con il tritato">
+  <div class="np-car-viewport" tabindex="0">
+    <div class="np-car-track">
+      <section class="np-slide" aria-label="1 di 4">
+        <div class="np-tile">
+          <h3>Granulometria controllata</h3>
+          <p>Fine, media o grossa in base all’animale.</p>
+        </div>
+      </section>
+
+      <section class="np-slide" aria-label="2 di 4">
+        <div class="np-tile">
+          <h3>Razione più uniforme</h3>
+          <p>Meno selezione del mangime.</p>
+        </div>
+      </section>
+
+      <section class="np-slide" aria-label="3 di 4">
+        <div class="np-tile">
+          <h3>Prodotto su richiesta</h3>
+          <p>Preparato dopo conferma ordine.</p>
+        </div>
+      </section>
+
+      <section class="np-slide" aria-label="4 di 4">
+        <div class="np-tile">
+          <h3>Mix personalizzabili</h3>
+          <p>Miscela in base alle esigenze.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="np-car-actions">
+    <button class="btn ghost np-navbtn np-prev" type="button" aria-label="Precedente">‹</button>
+    <div class="np-dots" role="tablist" aria-label="Selettore slide">
+      <button class="np-dot is-active" type="button" aria-label="Vai alla slide 1" aria-current="true"></button>
+      <button class="np-dot" type="button" aria-label="Vai alla slide 2"></button>
+      <button class="np-dot" type="button" aria-label="Vai alla slide 3"></button>
+      <button class="np-dot" type="button" aria-label="Vai alla slide 4"></button>
+    </div>
+    <button class="btn ghost np-navbtn np-next" type="button" aria-label="Successivo">›</button>
+  </div>
+</div>
+
 
           <div class="np-tile">
             <h3>Razione più uniforme</h3>
@@ -174,6 +303,48 @@
     <p>© AgroTritura — Mangime tritato su misura</p>
   </div>
 </footer>
+
+
+<script>
+(function(){
+  const track = document.querySelector('.np-car-track');
+  if(!track) return;
+  const prev = document.querySelector('.np-prev');
+  const next = document.querySelector('.np-next');
+  const dots = Array.from(document.querySelectorAll('.np-dot'));
+  const viewport = document.querySelector('.np-car-viewport');
+  const total = dots.length;
+  let i = 0;
+
+  function update(){
+    track.style.transform = `translateX(-${i*100}%)`;
+    dots.forEach((d, idx) => {
+      const active = idx === i;
+      d.classList.toggle('is-active', active);
+      d.setAttribute('aria-current', active ? 'true' : 'false');
+    });
+  }
+  function go(n){
+    i = (n + total) % total;
+    update();
+  }
+  prev && prev.addEventListener('click', () => go(i-1));
+  next && next.addEventListener('click', () => go(i+1));
+  dots.forEach((d, idx) => d.addEventListener('click', () => go(idx)));
+
+  // Swipe
+  let startX = null;
+  viewport && viewport.addEventListener('touchstart', (e)=>{ startX = e.touches[0].clientX; }, {passive:true});
+  viewport && viewport.addEventListener('touchend', (e)=>{
+    if(startX === null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if(Math.abs(dx) > 40){ dx < 0 ? go(i+1) : go(i-1); }
+    startX = null;
+  }, {passive:true});
+
+  update();
+})();
+</script>
 
 </body>
 </html>
