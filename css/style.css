@@ -889,3 +889,35 @@ details p{color:var(--muted); margin:10px 0 0}
     display:flex !important;
   }
 }
+/* --- FIX ZOOM / LAYOUT MOBILE --- */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Evita resize automatico testi su alcuni browser mobile */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Blocca elementi che “sforano” lo schermo */
+.container, .section, .card, .sliderWrap, .gridScroll, .galleryScroll {
+  max-width: 100%;
+}
+@media (max-width: 900px) {
+  .gridScroll > * {
+    min-width: 88%;
+    max-width: 88%;
+  }
+}
