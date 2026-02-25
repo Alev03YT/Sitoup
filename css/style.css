@@ -887,3 +887,54 @@ details p{color:var(--muted); margin:10px 0 0}
 .stepsList li{
   margin: 10px 0;
 }
+.mobile-slider-section {
+  margin: 40px 0;
+}
+
+.mobile-slider-wrapper {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mobile-slide {
+  min-width: 100%;
+  scroll-snap-align: start;
+  padding: 0 10px;
+}
+
+.mobile-slider-dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.mobile-slider-dots .dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 4px;
+}
+
+.mobile-slider-dots .dot.active {
+  background: #f59e0b;
+}
+
+/* SOLO MOBILE */
+@media (min-width: 768px) {
+  .mobile-slider-wrapper {
+    display: block;
+  }
+
+  .mobile-slide {
+    min-width: auto;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+
+  .mobile-slider-dots {
+    display: none;
+  }
+}
