@@ -713,3 +713,15 @@ Preventivo generato dal sito AgroTritura`;
     }
   });
 }
+const slider = document.querySelector('.mobile-slider-wrapper');
+const dots = document.querySelectorAll('.mobile-slider-dots .dot');
+
+if (slider && dots.length > 0) {
+  slider.addEventListener('scroll', () => {
+    const slideWidth = slider.offsetWidth;
+    const index = Math.round(slider.scrollLeft / slideWidth);
+
+    dots.forEach(dot => dot.classList.remove('active'));
+    if (dots[index]) dots[index].classList.add('active');
+  });
+}
