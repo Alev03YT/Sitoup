@@ -841,3 +841,24 @@ details p{color:var(--muted); margin:10px 0 0}
   font-weight:700;
   font-size:.95rem;
 }
+.btn-preventivo{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  padding:16px;
+  border-radius:18px;
+  font-weight:800;
+  font-size:18px;
+  text-decoration:none;
+  background:#f59e0b;
+  color:#ffffff;
+  box-shadow:0 10px 24px rgba(245,158,11,.30);
+  transition:all .15s ease;
+  margin-top:16px;
+}
+
+.btn-preventivo:active{
+  transform:scale(.98);
+  box-shadow:0 6px 14px rgba(245,158,11,.25);
+}
