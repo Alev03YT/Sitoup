@@ -506,10 +506,39 @@ function initSlider(sliderWrap){
     t = setTimeout(()=> setActiveDot(currentIndex()), 60);
   }, { passive:true });
 
-  updateActiveState();
-  window.addEventListener("resize", ()=> {
+  const mq = window.matchMedia("(max-width: 820px)");
+
+  const applyMode = ()=>{
+    const isMobile = mq.matches;
+    sliderWrap.classList.toggle("isMobileSlider", isMobile);
+
+    if(!isMobile){
+      sliderWrap.classList.remove("sliderActive");
+      if(btnPrev) btnPrev.style.display = "none";
+      if(btnNext) btnNext.style.display = "none";
+      if(dotsWrap) dotsWrap.innerHTML = "";
+      track.scrollLeft = 0;
+      return;
+    }
+
     updateActiveState();
     setActiveDot(currentIndex());
+  };
+
+  applyMode();
+
+  // media query listener (old Safari fallback)
+  if(mq.addEventListener){
+    mq.addEventListener("change", applyMode);
+  } else if(mq.addListener){
+    mq.addListener(applyMode);
+  }
+
+  window.addEventListener("resize", ()=> {
+    if(mq.matches){
+      updateActiveState();
+      setActiveDot(currentIndex());
+    }
   });
 }
 
