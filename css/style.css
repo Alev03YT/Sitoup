@@ -491,6 +491,20 @@ details p{color:var(--muted); margin:10px 0 0}
 
   .gridScroll > .feature{ flex:0 0 85%; scroll-snap-align:start; }
   .galleryScroll > .g-item{ flex:0 0 85%; scroll-snap-align:start; }
+  /* slider "Come funziona" (2 card) su mobile */
+  .howSlider{
+    display:flex !important;
+    gap:12px;
+    overflow-x:auto;
+    padding-bottom:10px;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width:none;
+  }
+  .howSlider::-webkit-scrollbar{ display:none; }
+  .howSlider > .card{ flex:0 0 92%; scroll-snap-align:start; }
+
 
   @media (max-width: 420px){
     .gridScroll > .feature,
@@ -826,34 +840,4 @@ details p{color:var(--muted); margin:10px 0 0}
   color:var(--muted);
   font-weight:700;
   font-size:.95rem;
-}
-
-
-
-/* ============================
-   MOBILE SLIDER (specie + perche)
-   ============================ */
-.npMobileSlider{ position:relative; }
-.npMobileSlider .sliderDots{ margin-top:14px; display:flex; gap:8px; justify-content:center; }
-@media (max-width: 820px){
-  .npMobileSlider .sliderTrack{
-    display:flex !important;
-    overflow-x:auto;
-    scroll-snap-type:x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap:14px !important;
-    padding: 2px 8px 8px 8px;
-  }
-  .npMobileSlider .sliderTrack > *{
-    scroll-snap-align:start;
-    flex: 0 0 88%;
-  }
-  /* make cards full height nicely */
-  .npMobileSlider .card{ height: 100%; }
-}
-/* On larger screens keep grid layout */
-@media (min-width: 821px){
-  .npMobileSlider .sliderTrack{
-    display:grid !important;
-  }
 }
