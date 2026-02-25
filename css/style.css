@@ -148,6 +148,8 @@ img{max-width:100%;display:block}
   padding:12px 16px; border-radius:14px; text-decoration:none;
   font-weight:800; letter-spacing:.2px;
 }
+.btn.big{padding:16px 20px; font-size:18px;}
+
 .btn.primary{background:var(--orange); color:white; box-shadow:0 18px 35px rgba(255,152,0,.25)}
 .btn.ghost{
   background:rgba(255,255,255,.10); color:white;
@@ -861,4 +863,29 @@ details p{color:var(--muted); margin:10px 0 0}
 .btn-preventivo:active{
   transform:scale(.98);
   box-shadow:0 6px 14px rgba(245,158,11,.25);
+}
+
+
+/* === Mobile-only slider behavior (keeps desktop layout unchanged) === */
+@media (max-width: 820px){
+  .sliderWrap.isMobileSlider [data-slider-track]{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    overflow-x:auto !important;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    gap:14px;
+    padding-bottom:10px;
+  }
+  .sliderWrap.isMobileSlider [data-slider-track] > *{
+    flex:0 0 86%;
+    max-width:86%;
+    scroll-snap-align:center;
+  }
+  .sliderWrap.isMobileSlider .sliderBtn{
+    display:flex !important;
+  }
+  .sliderWrap.isMobileSlider .sliderDots{
+    display:flex !important;
+  }
 }
