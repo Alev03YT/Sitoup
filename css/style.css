@@ -827,3 +827,33 @@ details p{color:var(--muted); margin:10px 0 0}
   font-weight:700;
   font-size:.95rem;
 }
+
+
+
+/* ============================
+   MOBILE SLIDER (specie + perche)
+   ============================ */
+.npMobileSlider{ position:relative; }
+.npMobileSlider .sliderDots{ margin-top:14px; display:flex; gap:8px; justify-content:center; }
+@media (max-width: 820px){
+  .npMobileSlider .sliderTrack{
+    display:flex !important;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap:14px !important;
+    padding: 2px 8px 8px 8px;
+  }
+  .npMobileSlider .sliderTrack > *{
+    scroll-snap-align:start;
+    flex: 0 0 88%;
+  }
+  /* make cards full height nicely */
+  .npMobileSlider .card{ height: 100%; }
+}
+/* On larger screens keep grid layout */
+@media (min-width: 821px){
+  .npMobileSlider .sliderTrack{
+    display:grid !important;
+  }
+}
