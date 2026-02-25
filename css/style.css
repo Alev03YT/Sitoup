@@ -864,3 +864,26 @@ details p{color:var(--muted); margin:10px 0 0}
   transform:scale(.98);
   box-shadow:0 6px 14px rgba(245,158,11,.25);
 }
+
+
+/* ===== Come funziona: 2 card intere a slider su mobile ===== */
+@media (max-width: 900px){
+  .twoCardSlider .gridScroll > .feature{
+    flex: 0 0 100%;
+  }
+  .twoCardSlider .gridScroll{
+    scroll-snap-type: x mandatory;
+  }
+  .twoCardSlider .gridScroll > .feature{
+    scroll-snap-align: start;
+  }
+}
+
+/* lista passi dentro la card */
+.stepsList{
+  margin: 12px 0 0;
+  padding-left: 18px;
+}
+.stepsList li{
+  margin: 10px 0;
+}
