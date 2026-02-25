@@ -148,8 +148,6 @@ img{max-width:100%;display:block}
   padding:12px 16px; border-radius:14px; text-decoration:none;
   font-weight:800; letter-spacing:.2px;
 }
-.btn.big{padding:16px 20px; font-size:18px;}
-
 .btn.primary{background:var(--orange); color:white; box-shadow:0 18px 35px rgba(255,152,0,.25)}
 .btn.ghost{
   background:rgba(255,255,255,.10); color:white;
@@ -863,78 +861,4 @@ details p{color:var(--muted); margin:10px 0 0}
 .btn-preventivo:active{
   transform:scale(.98);
   box-shadow:0 6px 14px rgba(245,158,11,.25);
-}
-
-
-/* ===== Come funziona: 2 card intere a slider su mobile ===== */
-@media (max-width: 900px){
-  .twoCardSlider .gridScroll > .feature{
-    flex: 0 0 100%;
-  }
-  .twoCardSlider .gridScroll{
-    scroll-snap-type: x mandatory;
-  }
-  .twoCardSlider .gridScroll > .feature{
-    scroll-snap-align: start;
-  }
-}
-
-/* lista passi dentro la card */
-.stepsList{
-  margin: 12px 0 0;
-  padding-left: 18px;
-}
-.stepsList li{
-  margin: 10px 0;
-}
-.mobile-slider-section {
-  margin: 40px 0;
-}
-
-.mobile-slider-wrapper {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-
-.mobile-slide {
-  min-width: 100%;
-  scroll-snap-align: start;
-  padding: 0 10px;
-}
-
-.mobile-slider-dots {
-  text-align: center;
-  margin-top: 15px;
-}
-
-.mobile-slider-dots .dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  background: #ccc;
-  border-radius: 50%;
-  margin: 0 4px;
-}
-
-.mobile-slider-dots .dot.active {
-  background: #f59e0b;
-}
-
-/* SOLO MOBILE */
-@media (min-width: 768px) {
-  .mobile-slider-wrapper {
-    display: block;
-  }
-
-  .mobile-slide {
-    min-width: auto;
-    padding: 0;
-    margin-bottom: 30px;
-  }
-
-  .mobile-slider-dots {
-    display: none;
-  }
 }
