@@ -921,3 +921,37 @@ html {
     max-width: 88%;
   }
 }
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* { box-sizing: border-box; }
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+.table {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+@media (max-width: 900px) {
+  .gridScroll, .galleryScroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .gridScroll > * {
+    min-width: 88%;
+    max-width: 88%;
+  }
+}
