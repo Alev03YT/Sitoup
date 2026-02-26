@@ -659,3 +659,51 @@ html, body{
   width:100% !important;
   max-width:100% !important;
 }
+/* FIX: immagini dentro card sempre clippate e non "escono" */
+.card{
+  overflow:hidden;
+}
+.card .img{
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+@media (max-width: 768px){
+  /* le immagini dei blocchi non devono diventare giganti */
+  .card .img{
+    height: 200px !important;
+    background-position: center !important;
+    background-size: cover !important;
+  }
+
+  /* evita qualsiasi sbordo laterale */
+  .split > *{
+    min-width: 0;
+  }
+}
+/* ===============================
+   FIX FOTO CHE ESCE DALLA PAGINA (MOBILE)
+================================*/
+@media (max-width:768px){
+
+  .split{
+    gap:14px !important;
+  }
+
+  .split .card{
+    margin:0 !important;
+    width:100% !important;
+  }
+
+  .split .img{
+    height:200px !important;
+    overflow:hidden;
+  }
+
+  .split img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+    display:block;
+  }
+
+}
