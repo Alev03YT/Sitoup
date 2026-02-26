@@ -649,3 +649,13 @@ details p{color:var(--muted); margin:10px 0 0}
     display:flex !important;
   }
 }
+/* FIX: evita che gli slider allarghino la pagina (causa zoom-out su Chrome Android) */
+.sliderWrap{
+  overflow:hidden;
+}
+/* Super-fix overflow */
+html, body{
+  overflow-x:hidden !important;
+  width:100% !important;
+  max-width:100% !important;
+}
