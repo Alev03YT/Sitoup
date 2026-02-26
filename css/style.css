@@ -425,8 +425,8 @@ details p{color:var(--muted); margin:10px 0 0}
   user-select:none;
 }
 .sliderBtn:hover{ filter:brightness(.98); }
-.sliderBtn.prev{ left:-10px; }
-.sliderBtn.next{ right:-10px; }
+.sliderBtn.prev{ left:10px; }
+.sliderBtn.next{ right:10px; }
 
 .sliderDots{
   margin-top:10px;
@@ -614,8 +614,8 @@ details p{color:var(--muted); margin:10px 0 0}
     height:40px;
     font-size:24px;
   }
-  .sliderBtn.prev{ left:-6px; }
-  .sliderBtn.next{ right:-6px; }
+  .sliderBtn.prev{ left:8px; }
+.sliderBtn.next{ right:8px; }
 
   /* nasconde WhatsApp quando menu aperto */
   body.menu-open .whatsappFloat{ display:none; }
